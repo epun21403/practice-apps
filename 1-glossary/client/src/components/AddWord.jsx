@@ -1,18 +1,24 @@
 import React, {useState} from "react";
 
-const AddWord = ({ onType, word, setWord }) => {
+const AddWord = ({ onSearch, word, setWord, definition, setDefinition  }) => {
 
-  const onChange = (e) => {
+  const onChangeWord = (e) => {
     setWord(e.target.value);
   }
 
+  const onChangeDefinition = (e) => {
+    setDefinition(e.target.value);
+  }
+
   const insertWord = () => {
-    onType(word);
+    onSearch(word, definition);
   }
 
   return (
     <div>
-      <input onChange={onChange} value={word} />
+      <input onChange={onChangeWord} value={word} placeholder='word'/>
+      <br></br>
+      <input onChange={onChangeDefinition} value={definition} placeholder='definition'/>
       <button onClick={insertWord}>Add word to glossary</button>
     </div>
   )

@@ -15,12 +15,6 @@ const Glossary = mongoose.model('Glossary', schema);
 // 3. Export the models
 module.exports.getAll = () => {
   return Glossary.find()
-    .then((data) => {
-      console.log('Get all words from DB ', data);
-    })
-    .catch((err) => {
-      console.log('Error getting words from DB ', err);
-    })
 }
 
 module.exports.postWord = (word) => {

@@ -3,7 +3,7 @@ import React from "react";
 const GlossaryListEntry = ({word}) => {
   return (
     <div>
-      {`Word: ${word.word} Definition: ${word.definition}`}
+      {`word: ${word.word} definition: ${word.definition}`}
     </div>
   )
 }
