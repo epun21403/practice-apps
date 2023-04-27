@@ -26,5 +26,15 @@ module.exports.postWord = (word) => {
       console.log('Error adding word to DB', err);
     })
 }
+
+module.exports.deleteWord = (inputWord) => {
+  Glossary.deleteOne(inputWord)
+    .then(() => {
+      console.log('Deleted from DB');
+    })
+    .catch((err) => {
+      console.log('Error deleting from DB');
+    })
+}
 // 4. Import the models into any modules that need them
 

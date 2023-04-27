@@ -5,6 +5,7 @@ import GlossaryList from "./components/GlossaryList.jsx";
 import GlossaryListEntry from "./components/GlossaryListEntry.jsx";
 import axios from 'axios';
 import FilterBar from "./components/FilterBar.jsx";
+import mongoose from "mongoose";
 
 const App = () => {
 
@@ -49,13 +50,34 @@ const App = () => {
     setWords(newArray);
   }
 
+  // const handleDelete = (click) => {
+  //   const newList = words.filter((word) => {
+  //     return word.word !== click;
+  //   })
+  //   setWords(newList);
+  // }
+
+  const handleDelete = (click) => {
+    axios.delete('http://127.0.0.1:3000/glossary', {
+      data: {word: click}
+    })
+      .then(() => {
+        console.log('Delete successful clientSide');
+        getFunction();
+      })
+      .catch((err) => {
+        console.log('Error deleting word');
+      })
+  }
+
   return (
     <div>
       <h1>BudgetGlossary</h1>
       <AddWord onSearch={insertWord} word={word} setWord={setWord} definition={definition} setDefinition={setDefinition} />
       <br></br>
       <FilterBar filterWord={filterWord} setfilterWord={setfilterWord} onSearch={filterWords}/>
-      <GlossaryList words={words} />
+      <button onClick={getFunction}>Reset GlossaryList</button>
+      <GlossaryList words={words} handleDelete={handleDelete}/>
     </div>
   );
 }
