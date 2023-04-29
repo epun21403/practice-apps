@@ -7,7 +7,7 @@ const F2 = ({setNext, setData, data}) => {
     line2: '',
     city: '',
     state: '',
-    zipcode: ''
+    zipcode: null
   })
 
   const handleChange = (e) => {
@@ -46,7 +46,7 @@ const F2 = ({setNext, setData, data}) => {
       <br></br>
       <>Zip Code</>
       <br></br>
-      <input name='zipcode' onChange={handleChange} placeholder='ZIP Code'/>
+      <input name='zipcode' type='number' onChange={handleChange} placeholder='ZIP Code'/>
       <br></br>
       <button type='submit' onClick={update}>Next</button>
     </form>

@@ -3,10 +3,10 @@ import React, {useState} from 'react';
 const F3 = ({setNext, setData, data}) => {
 
   const [f3, setF3] = useState({
-    creditcard: '',
+    creditcard: null,
     expire: '',
-    cvv: '',
-    bill: ''
+    cvv: null,
+    billzipcode: null
   })
 
   const handleChange = (e) => {
@@ -29,7 +29,7 @@ const F3 = ({setNext, setData, data}) => {
     <form>
       <>Creditcard#</>
       <br></br>
-      <input name='creditcard' onChange={handleChange} placeholder='Creditcard#'/>
+      <input name='creditcard' type='number' onChange={handleChange} placeholder='Creditcard#'/>
       <br></br>
       <>Expire date</>
       <br></br>
@@ -37,11 +37,11 @@ const F3 = ({setNext, setData, data}) => {
       <br></br>
       <>CVV</>
       <br></br>
-      <input name='cvv' onChange={handleChange} placeholder='CVV'/>
+      <input name='cvv' type='number' onChange={handleChange} placeholder='CVV'/>
       <br></br>
       <>Billing Zip Code</>
       <br></br>
-      <input name='bill' onChange={handleChange} placeholder='Billing ZIP Code'/>
+      <input name='billzipcode' type='number' onChange={handleChange} placeholder='Billing ZIP Code'/>
       <br></br>
       <button type='submit'onClick={update}>Finish checkout</button>
     </form>

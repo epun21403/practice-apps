@@ -4,9 +4,7 @@ import F1 from "./components/F1.jsx";
 import F2 from "./components/F2.jsx";
 import F3 from "./components/F3.jsx";
 import Confirmation from "./components/Confirmation.jsx";
-
-
-
+import axios from "axios";
 
 const App = () => {
 

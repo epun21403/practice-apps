@@ -1,8 +1,22 @@
 import React from 'react';
+import axios from 'axios'
 
 const Confirmation = ({setNext, data}) => {
+
+  console.log(data)
+  const sendData = () => {
+    axios.post('http://localhost:3000/checkout', data)
+      .then(() => {
+        console.log('Posted customer data');
+        setNext('');
+      })
+      .catch((err) => {
+        console.log('Error posting customer data');
+      })
+  }
+
   return (
-    <form>
+    <div>
       <>{`Name: ${data.name}`}</>
       <br></br>
       <>{`Email: ${data.email}`}</>
@@ -25,10 +39,10 @@ const Confirmation = ({setNext, data}) => {
       <br></br>
       <>{`CVV: ${data.cvv}`}</>
       <br></br>
-      <>{`Billing Zip Code: ${data.bill}`}</>
+      <>{`Billing Zip Code: ${data.billzipcode}`}</>
       <br></br>
-      <button onClick={() => {setNext('')}}>Purchase</button>
-    </form>
+      <button onClick={sendData}>Purchase</button>
+    </div>
   )
 }
 
