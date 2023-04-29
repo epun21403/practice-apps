@@ -3,7 +3,6 @@ import axios from 'axios'
 
 const Confirmation = ({setNext, data}) => {
 
-  console.log(data)
   const sendData = () => {
     axios.post('http://localhost:3000/checkout', data)
       .then(() => {

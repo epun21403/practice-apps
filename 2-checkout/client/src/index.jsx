@@ -11,14 +11,6 @@ const App = () => {
   const [data, setData] = useState({});
   const [next, setNext] = useState('');
 
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const formData = new formData(form);
-    console.log(formData);
-  }
-
   return (
     <div>
       <h1>Budget Checkout</h1>
