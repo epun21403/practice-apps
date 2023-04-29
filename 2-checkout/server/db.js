@@ -27,7 +27,8 @@ db.connectAsync()
         city VARCHAR(200),
         state VARCHAR(50),
         zipcode INT(10),
-        creditcard INT(20),
+        phone VARCHAR(30),
+        creditcard VARCHAR(20),
         expire VARCHAR(10),
         cvv INT(10),
         billzipcode INT(10)

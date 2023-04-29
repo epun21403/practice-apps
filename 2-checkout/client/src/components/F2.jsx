@@ -3,11 +3,12 @@ import React, {useState} from 'react';
 const F2 = ({setNext, setData, data}) => {
 
   const [f2, setF2] = useState({
-    line1: '',
-    line2: '',
-    city: '',
-    state: '',
-    zipcode: null
+    line1: null,
+    line2: null,
+    city: null,
+    state: null,
+    zipcode: null,
+    phone: null
   })
 
   const handleChange = (e) => {
@@ -47,6 +48,10 @@ const F2 = ({setNext, setData, data}) => {
       <>Zip Code</>
       <br></br>
       <input name='zipcode' type='number' onChange={handleChange} placeholder='ZIP Code'/>
+      <br></br>
+      <>Phone number</>
+      <br></br>
+      <input name='phone' type='number' onChange={handleChange} placeholder='Phone number'/>
       <br></br>
       <button type='submit' onClick={update}>Next</button>
     </form>

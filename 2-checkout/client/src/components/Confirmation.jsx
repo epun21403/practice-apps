@@ -32,6 +32,8 @@ const Confirmation = ({setNext, data}) => {
       <br></br>
       <>{`Zip Code: ${data.zipcode}`}</>
       <br></br>
+      <>{`Phone number: ${data.phone}`}</>
+      <br></br>
       <>{`CreditCard#: ${data.creditcard}`}</>
       <br></br>
       <>{`ExpireDate: ${data.expire}`}</>

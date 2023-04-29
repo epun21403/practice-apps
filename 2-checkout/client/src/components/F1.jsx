@@ -3,9 +3,9 @@ import React, {useState} from 'react';
 const F1 = ({setNext, setData, data}) => {
 
   const [f1, setF1] = useState({
-    name: '',
-    email: '',
-    password: '',
+    name: null,
+    email: null,
+    password: null,
   })
 
   const handleChange = (e) => {

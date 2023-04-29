@@ -4,7 +4,7 @@ const F3 = ({setNext, setData, data}) => {
 
   const [f3, setF3] = useState({
     creditcard: null,
-    expire: '',
+    expire: null,
     cvv: null,
     billzipcode: null
   })
