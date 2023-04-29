@@ -12,6 +12,7 @@ const schema = new mongoose.Schema({
 });
 
 const Glossary = mongoose.model('Glossary', schema);
+
 // 3. Export the models
 module.exports.getAll = () => {
   return Glossary.find()

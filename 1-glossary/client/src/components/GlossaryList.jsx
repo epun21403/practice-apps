@@ -6,7 +6,7 @@ const GlossaryList = ({words, handleDelete}) => {
   return (
     <div>
       <h2>GlossaryList</h2>
-          {words.map((word, index) => (
+          {words.map((word) => (
             <GlossaryListEntry key={word.word} word={word} handleDelete={handleDelete}/>
           ))}
     </div>

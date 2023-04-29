@@ -5,7 +5,6 @@ import GlossaryList from "./components/GlossaryList.jsx";
 import GlossaryListEntry from "./components/GlossaryListEntry.jsx";
 import axios from 'axios';
 import FilterBar from "./components/FilterBar.jsx";
-import mongoose from "mongoose";
 
 const App = () => {
 
@@ -49,13 +48,6 @@ const App = () => {
     })
     setWords(newArray);
   }
-
-  // const handleDelete = (click) => {
-  //   const newList = words.filter((word) => {
-  //     return word.word !== click;
-  //   })
-  //   setWords(newList);
-  // }
 
   const handleDelete = (click) => {
     axios.delete('http://127.0.0.1:3000/glossary', {
