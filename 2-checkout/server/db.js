@@ -37,4 +37,39 @@ db.connectAsync()
   )
   .catch((err) => console.log(err));
 
+  const post = (data, session_id) => {
+    return db.queryAsync(
+      `INSERT INTO data (
+        sessionid,name,
+        email,
+        password,
+        line1,
+        line2,
+        city,
+        state,
+        zipcode,
+        phone,
+        creditcard,
+        expire,
+        cvv,
+        billzipcode
+      ) VALUES (
+        '${session_id}',
+        '${data.name}',
+        '${data.email}',
+        '${data.password}',
+        '${data.line1}',
+        '${data.line2}',
+        '${data.city}',
+        '${data.state}',
+        ${data.zipcode},
+        ${data.phone},
+        ${data.creditcard},
+        '${data.expire}',
+        ${data.cvv},
+        ${data.billzipcode}
+      )`
+    )
+  }
+db.post = post;
 module.exports = db;

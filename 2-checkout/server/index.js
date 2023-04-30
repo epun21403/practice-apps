@@ -27,38 +27,7 @@ app.get('/checkout', (req, res) => {
 app.post('/checkout', (req, res) => {
   console.log('Data to be posted', req.body, req.session_id);
   var data = req.body;
-  var sql =
-  `INSERT INTO data (
-    sessionid,name,
-    email,
-    password,
-    line1,
-    line2,
-    city,
-    state,
-    zipcode,
-    phone,
-    creditcard,
-    expire,
-    cvv,
-    billzipcode
-  ) VALUES (
-    '${req.session_id}',
-    '${data.name}',
-    '${data.email}',
-    '${data.password}',
-    '${data.line1}',
-    '${data.line2}',
-    '${data.city}',
-    '${data.state}',
-    ${data.zipcode},
-    ${data.phone},
-    ${data.creditcard},
-    '${data.expire}',
-    ${data.cvv},
-    ${data.billzipcode}
-  )`;
-  db.queryAsync(sql);
+  db.post(data, req.session_id);
   res.json('Post request completed');
 })
 
